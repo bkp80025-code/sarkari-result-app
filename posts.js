@@ -21,9 +21,9 @@ document.addEventListener("DOMContentLoaded", function () {
       link: "#"
     },
     {
-      title: "NTA NEET UG Admit Card 2026",
+      title: "RRB GROUP D ADMIT CARD 2026",
       category: "admit-list-container",
-      link: "#"
+      link: "latest-job/group-d.html"
     }
   ];
 
