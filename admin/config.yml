@@ -1,0 +1,23 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "images/uploads"
+public_folder: "/images/uploads"
+
+collections:
+  - name: "jobs"
+    label: "Sarkari Job Posts"
+    folder: "posts"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Post Title", name: "title", widget: "string" }
+      - { label: "Category", name: "category", widget: "select", options: ["Latest Jobs", "Admit Card", "Result", "Answer Key"] }
+      - { label: "Apply Start Date", name: "start_date", widget: "string" }
+      - { label: "Last Date", name: "last_date", widget: "string" }
+      - { label: "Fee Details", name: "fee_info", widget: "string" }
+      - { label: "Total Vacancy", name: "total_posts", widget: "string" }
+      - { label: "Apply Online Link", name: "apply_link", widget: "string" }
+      - { label: "Official Notification Link", name: "notification_link", widget: "string" }
+      - { label: "Full Details / Body Text", name: "body", widget: "markdown" }
