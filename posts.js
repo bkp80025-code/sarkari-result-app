@@ -5,6 +5,12 @@ document.addEventListener("DOMContentLoaded", function () {
       category: "job-list-container",
       link: "latest-job/ibps.html"
     },
+
+    {
+      title: "Rajasthan Safai Karmchari Online Form 2026",
+      category: "job-list-container",
+      link: "latest-job/rajsthan-safai-karmchari.html"
+    },
     {
       title: "Railway RRB Technician Recruitment 2026",
       category: "job-list-container",
