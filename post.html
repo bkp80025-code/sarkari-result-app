@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="page-title">Job Details - ONLINEPUR</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <style>
+        .post-container { max-width: 900px; margin: 20px auto; background: white; padding: 25px; border-radius: 8px; border: 1px solid #cbd5e1; }
+        .post-header { text-align: center; color: #1e3c72; border-bottom: 2px solid #1e3c72; padding-bottom: 12px; margin-bottom: 20px; font-size: 24px; }
+        .info-table { width: 100%; border-collapse: collapse; margin-bottom: 25px; }
+        .info-table th, .info-table td { border: 1px solid #cbd5e1; padding: 12px; text-align: left; font-size: 14px; }
+        .info-table th { background-color: #f1f5f9; width: 30%; font-weight: bold; }
+        .btn-link { display: inline-block; padding: 8px 16px; background: #2563eb; color: white; text-decoration: none; border-radius: 4px; font-weight: bold; }
+        .btn-link:hover { background: #1d4ed8; }
+        .section-title { background: #1e293b; color: white; padding: 10px 15px; font-size: 16px; margin-top: 25px; margin-bottom: 15px; border-radius: 4px; }
+        .post-body { line-height: 1.8; font-size: 15px; }
+        .post-body table { width: 100%; border-collapse: collapse; margin: 15px 0; }
+        .post-body table, .post-body th, .post-body td { border: 1px solid #cbd5e1; padding: 10px; }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="logo">ONLINEPUR</div>
+    <p>भारत का अपना विश्वसनीय जॉब एवं शिक्षा पोर्टल</p>
+</header>
+
+<nav>
+    <a href="index.html">← Back To Home</a>
+</nav>
+
+<div class="post-container">
+    <h1 class="post-header" id="post-title">Loading Details...</h1>
+
+    <table class="info-table">
+        <tr>
+            <th>Category</th>
+            <td id="post-category">-</td>
+        </tr>
+        <tr>
+            <th>Important Dates</th>
+            <td>Start Date: <b id="post-start-date">-</b> <br> Last Date: <b id="post-last-date" style="color:red;">-</b></td>
+        </tr>
+        <tr>
+            <th>Application Fee</th>
+            <td id="post-fee">-</td>
+        </tr>
+        <tr>
+            <th>Total Vacancy / Posts</th>
+            <td id="post-vacancy">-</td>
+        </tr>
+    </table>
+
+    <div class="section-title">🔗 Important Direct Links</div>
+    <table class="info-table" id="links-table">
+        <tr id="row-apply">
+            <th>Apply Online</th>
+            <td><a href="#" id="post-apply-btn" target="_blank" class="btn-link">Click Here</a></td>
+        </tr>
+        <tr id="row-notif">
+            <th>Official Notification</th>
+            <td><a href="#" id="post-notif-btn" target="_blank" class="btn-link" style="background:#16a34a;">Download Notification</a></td>
+        </tr>
+    </table>
+
+    <div class="section-title">📑 Full Details & Instructions</div>
+    <div class="post-body" id="post-body-content"></div>
+</div>
+
+<footer>
+    <p>© 2026 ONLINEPUR. All Rights Reserved.</p>
+</footer>
+
+<script>
+document.addEventListener("DOMContentLoaded", async function () {
+
+    function cleanBranding(text) {
+        if (!text) return "";
+        return text
+            .replace(/Sarkari\s*Result/gi, "ONLINEPUR")
+            .replace(/Sarkari\s*Exam/gi, "ONLINEPUR")
+            .replace(/Sarkari\s*Naukri/gi, "ONLINEPUR")
+            .replace(/SarkariResult/gi, "ONLINEPUR")
+            .replace(/SarkariExam/gi, "ONLINEPUR");
+    }
+
+    const urlParams = new URLSearchParams(window.location.search);
+    const fileName = urlParams.get('file');
+
+    if (!fileName) {
+        document.getElementById('post-title').innerText = "Post Not Found!";
+        return;
+    }
+
+    try {
+        const rawUrl = `https://raw.githubusercontent.com/bkp80025-code/sarkari-result-app/main/posts/${fileName}`;
+        const res = await fetch(rawUrl);
+        if (!res.ok) throw new Error("File fetch failed");
+
+        let text = await res.text();
+        text = cleanBranding(text);
+
+        const parts = text.split(/^---$/m);
+        let frontmatterText = parts[1] || "";
+        let bodyText = parts.slice(2).join("---") || "";
+
+        function getField(key) {
+            const match = frontmatterText.match(new RegExp(`${key}:\\s*["']?(.*?)["']?$`, 'm'));
+            return match ? match[1].trim() : "";
+        }
+
+        const title = cleanBranding(getField('title')) || fileName.replace('.md', '');
+        const category = getField('category') || "Notification";
+        const startDate = getField('start_date') || "N/A";
+        const lastDate = getField('last_date') || "N/A";
+        const feeInfo = getField('fee_info') || "N/A";
+        const totalPosts = getField('total_posts') || "N/A";
+        const applyLink = getField('apply_link');
+        const notifLink = getField('notification_link');
+
+        document.getElementById('post-title').innerText = title;
+        document.getElementById('page-title').innerText = title + " - ONLINEPUR";
+        document.getElementById('post-category').innerText = category;
+        document.getElementById('post-start-date').innerText = startDate;
+        document.getElementById('post-last-date').innerText = lastDate;
+        document.getElementById('post-fee').innerText = feeInfo;
+        document.getElementById('post-vacancy').innerText = totalPosts;
+
+        if (applyLink) {
+            document.getElementById('post-apply-btn').href = applyLink;
+        } else {
+            document.getElementById('row-apply').style.display = 'none';
+        }
+
+        if (notifLink) {
+            document.getElementById('post-notif-btn').href = notifLink;
+        } else {
+            document.getElementById('row-notif').style.display = 'none';
+        }
+
+        // Render Extra Custom Links
+        const linksTable = document.getElementById('links-table');
+        const customLinksMatch = frontmatterText.match(/custom_links:([\s\S]*?)(?=\n[a-z_]+:|$)/i);
+        
+        if (customLinksMatch) {
+            const linksBlock = customLinksMatch[1];
+            const linkItems = linksBlock.split('- title:');
+            
+            linkItems.forEach(item => {
+                const tMatch = item.match(/^\s*["']?(.*?)["']?$/m);
+                const uMatch = item.match(/url:\s*["']?(.*?)["']?$/m);
+                
+                if (tMatch && uMatch && tMatch[1].trim() && uMatch[1].trim()) {
+                    const tr = document.createElement('tr');
+                    tr.innerHTML = `<th>${tMatch[1].trim()}</th><td><a href="${uMatch[1].trim()}" target="_blank" class="btn-link">Click Here</a></td>`;
+                    linksTable.appendChild(tr);
+                }
+            });
+        }
+
+        // Render Markdown Body
+        document.getElementById('post-body-content').innerHTML = marked.parse(cleanBranding(bodyText));
+
+    } catch (err) {
+        console.error("Error loading post:", err);
+        document.getElementById('post-title').innerText = "Error Loading Details!";
+    }
+});
+</script>
+
+</body>
+</html>
