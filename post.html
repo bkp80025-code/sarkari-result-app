@@ -7,49 +7,186 @@
     <link rel="stylesheet" href="style.css">
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
     <style>
-        /* Exact Sarkari Result Red/Blue Theme Styling */
-        body { background-color: #f4f6f9; font-family: Arial, sans-serif; }
-        .post-container { max-width: 980px; margin: 20px auto; background: white; padding: 20px; border: 2px solid #b22222; border-radius: 6px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
-        
-        .post-header { text-align: center; color: #b22222; font-size: 24px; font-weight: bold; margin-bottom: 15px; border-bottom: 2px solid #b22222; padding-bottom: 10px; }
-        
+        /* Exact Sarkari Result Layout with Bigger Fonts & Maroon Theme */
+        body { 
+            background-color: #f4f6f9; 
+            font-family: 'Georgia', 'Times New Roman', serif, Arial; 
+            color: #000;
+            margin: 0;
+            padding: 10px;
+        }
+
+        .post-container { 
+            max-width: 980px; 
+            margin: 20px auto; 
+            background: white; 
+            padding: 25px; 
+            border: 2px solid #6b0d23; 
+            border-radius: 4px; 
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15); 
+        }
+
+        /* Header Style */
+        .post-header { 
+            text-align: center; 
+            color: #6b0d23; 
+            font-size: 26px; 
+            font-weight: bold; 
+            margin-bottom: 20px; 
+            border-bottom: 3px double #6b0d23; 
+            padding-bottom: 12px; 
+            line-height: 1.4;
+        }
+
         /* Top Quick Info Table */
-        .info-table { width: 100%; border-collapse: collapse; margin-bottom: 20px; }
-        .info-table th, .info-table td { border: 1px solid #cbd5e1; padding: 10px 12px; text-align: left; font-size: 14px; }
-        .info-table th { background-color: #f1f5f9; width: 30%; font-weight: bold; color: #0f172a; }
-        
-        .btn-link { display: inline-block; padding: 7px 15px; background: #2563eb; color: white; text-decoration: none; border-radius: 4px; font-weight: bold; font-size: 14px; }
+        .info-table { 
+            width: 100%; 
+            border-collapse: collapse; 
+            margin-bottom: 20px; 
+            font-size: 16px; 
+            border: 2px solid #6b0d23;
+        }
+        .info-table th, .info-table td { 
+            border: 1px solid #000; 
+            padding: 12px 15px; 
+            text-align: left; 
+            line-height: 1.6;
+        }
+        .info-table th { 
+            background-color: #f8fafc; 
+            width: 32%; 
+            font-weight: bold; 
+            color: #6b0d23; 
+            font-size: 16px;
+        }
+
+        /* Buttons */
+        .btn-link { 
+            display: inline-block; 
+            padding: 8px 18px; 
+            background: #2563eb; 
+            color: white; 
+            text-decoration: none; 
+            border-radius: 4px; 
+            font-weight: bold; 
+            font-size: 15px; 
+            font-family: Arial, sans-serif;
+        }
         .btn-link:hover { background: #1d4ed8; }
-        .section-title { background: #b22222; color: white; padding: 10px 15px; font-size: 17px; margin-top: 25px; margin-bottom: 15px; font-weight: bold; text-align: center; border-radius: 3px; }
-        
+
+        /* Section Maroon Title */
+        .section-title { 
+            background: #6b0d23; 
+            color: white; 
+            padding: 10px 15px; 
+            font-size: 18px; 
+            margin-top: 25px; 
+            margin-bottom: 15px; 
+            font-weight: bold; 
+            text-align: center; 
+            border-radius: 2px; 
+        }
+
         /* Sarkari Result 2-Column Grid Layout */
-        .sr-grid-box { display: flex; flex-wrap: wrap; border: 1px solid #1e3c72; margin-bottom: 20px; }
-        .sr-col { flex: 1; min-width: 280px; border: 1px solid #1e3c72; padding: 12px; background: #fff; }
-        .sr-col-title { background: #1e3c72; color: white; font-weight: bold; text-align: center; padding: 8px; margin: -12px -12px 10px -12px; font-size: 16px; }
-        
-        /* Body Styling for Tables & List Items */
-        .post-body { line-height: 1.8; font-size: 14px; color: #1e293b; }
-        .post-body ul { list-style-type: square; padding-left: 20px; margin-bottom: 15px; }
-        .post-body li { margin-bottom: 5px; }
-        
-        /* Sarkari Result Tables */
-        .post-body table { width: 100% !important; border-collapse: collapse !important; margin: 15px 0 !important; }
-        .post-body table, .post-body th, .post-body td { border: 1px solid #1e3c72 !important; padding: 10px !important; text-align: left !important; }
-        .post-body th { background-color: #1e3c72 !important; color: white !important; font-weight: bold !important; text-align: center !important; }
-        
-        /* Bullet Text Highlight */
-        .sr-item { display: block; padding: 4px 0; font-size: 14px; border-bottom: 1px dashed #e2e8f0; }
-        .sr-item::before { content: "• "; color: #b22222; font-weight: bold; }
-        
+        .sr-grid-box { 
+            display: flex; 
+            flex-wrap: wrap; 
+            border: 2px solid #000; 
+            margin-bottom: 20px; 
+        }
+        .sr-col { 
+            flex: 1; 
+            min-width: 280px; 
+            border: 1px solid #000; 
+            padding: 15px; 
+            background: #fff; 
+        }
+        .sr-col-title { 
+            background: #6b0d23; 
+            color: white; 
+            font-weight: bold; 
+            text-align: center; 
+            padding: 10px; 
+            margin: -15px -15px 12px -15px; 
+            font-size: 18px; 
+        }
+
+        /* Body & Text Formatting (Bigger Text & Clear Spacing) */
+        .post-body { 
+            line-height: 1.9; 
+            font-size: 16px; 
+            color: #000; 
+        }
+
+        /* Auto Styled Headings Inside Body */
+        .post-body h1, .post-body h2, .post-body h3 {
+            background-color: #6b0d23;
+            color: #ffffff;
+            text-align: center;
+            padding: 10px;
+            font-size: 18px;
+            font-weight: bold;
+            margin-top: 25px;
+            margin-bottom: 15px;
+            border: 1px solid #000;
+        }
+
+        .post-body ul { 
+            list-style-type: square; 
+            padding-left: 25px; 
+            margin-bottom: 20px; 
+        }
+        .post-body li { 
+            margin-bottom: 8px; 
+            font-size: 16px;
+        }
+
+        /* Sarkari Result Tables inside Body */
+        .post-body table { 
+            width: 100% !important; 
+            border-collapse: collapse !important; 
+            margin: 20px 0 !important; 
+            border: 2px solid #000 !important;
+        }
+        .post-body table, .post-body th, .post-body td { 
+            border: 1px solid #000 !important; 
+            padding: 10px 12px !important; 
+            font-size: 15px !important;
+        }
+        .post-body th { 
+            background-color: #6b0d23 !important; 
+            color: white !important; 
+            font-weight: bold !important; 
+            text-align: center !important; 
+            font-size: 16px !important;
+        }
+
+        /* Bullet Text Highlights */
+        .sr-item { 
+            display: block; 
+            padding: 6px 0; 
+            font-size: 15px; 
+            border-bottom: 1px dashed #cbd5e1; 
+            color: #000;
+        }
+        .sr-item::before { 
+            content: "• "; 
+            color: #6b0d23; 
+            font-weight: bold; 
+            font-size: 18px;
+        }
+
         @media (max-width: 600px) {
             .sr-grid-box { flex-direction: column; }
+            .post-header { font-size: 21px; }
+            .info-table th, .info-table td { font-size: 14px; padding: 8px; }
         }
     </style>
 </head>
 <body>
 
 <header>
-    <div class="logo" style="color:#b22222; font-size: 28px; font-weight: bold; text-align: center; padding: 15px 0;">ONLINEPUR</div>
+    <div class="logo" style="color:#6b0d23; font-size: 32px; font-weight: bold; text-align: center; padding: 15px 0; font-family: 'Georgia', serif;">ONLINEPUR</div>
 </header>
 
 <div class="post-container">
@@ -62,7 +199,7 @@
         </tr>
         <tr>
             <th>Important Dates</th>
-            <td>Start Date: <b id="post-start-date">-</b> <br> Last Date: <b id="post-last-date" style="color:red;">-</b></td>
+            <td>Start Date: <b id="post-start-date" style="color:#000;">-</b> <br> Last Date: <b id="post-last-date" style="color:#d9381e; font-weight:bold;">-</b></td>
         </tr>
         <tr>
             <th>Application Fee</th>
@@ -70,14 +207,14 @@
         </tr>
         <tr>
             <th>Total Vacancy / Posts</th>
-            <td id="post-vacancy">-</td>
+            <td id="post-vacancy" style="font-weight:bold; font-size:17px; color:#6b0d23;">-</td>
         </tr>
     </table>
 
     <div class="section-title">🔗 Important Direct Links</div>
     <table class="info-table" id="links-table">
         <tr id="row-apply">
-            <th>Apply Online</th>
+            <th style="width: 40%;">Apply Online</th>
             <td><a href="#" id="post-apply-btn" target="_blank" class="btn-link">Click Here</a></td>
         </tr>
         <tr id="row-notif">
@@ -90,7 +227,7 @@
     <div class="post-body" id="post-body-content"></div>
 </div>
 
-<footer style="text-align: center; padding: 20px; font-size: 14px; color: #64748b;">
+<footer style="text-align: center; padding: 20px; font-size: 14px; color: #64748b; font-family: Arial, sans-serif;">
     <p>© 2026 ONLINEPUR. All Rights Reserved.</p>
 </footer>
 
@@ -240,7 +377,7 @@ document.addEventListener("DOMContentLoaded", async function () {
                 
                 if (tMatch && uMatch && tMatch[1].trim() && uMatch[1].trim()) {
                     const tr = document.createElement('tr');
-                    tr.innerHTML = `<th>${tMatch[1].trim()}</th><td><a href="${uMatch[1].trim()}" target="_blank" class="btn-link">Click Here</a></td>`;
+                    tr.innerHTML = `<th style="width: 40%;">${tMatch[1].trim()}</th><td><a href="${uMatch[1].trim()}" target="_blank" class="btn-link">Click Here</a></td>`;
                     linksTable.appendChild(tr);
                 }
             });
