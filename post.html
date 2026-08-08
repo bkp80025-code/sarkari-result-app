@@ -7,34 +7,50 @@
     <link rel="stylesheet" href="style.css">
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
     <style>
-        .post-container { max-width: 950px; margin: 20px auto; background: white; padding: 25px; border-radius: 8px; border: 1px solid #cbd5e1; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
-        .post-header { text-align: center; color: #1e3c72; border-bottom: 3px solid #1e3c72; padding-bottom: 12px; margin-bottom: 20px; font-size: 22px; font-weight: bold; }
-        .info-table { width: 100%; border-collapse: collapse; margin-bottom: 25px; }
-        .info-table th, .info-table td { border: 1px solid #cbd5e1; padding: 12px; text-align: left; font-size: 14px; }
-        .info-table th { background-color: #f1f5f9; width: 30%; font-weight: bold; color: #0f172a; }
-        .btn-link { display: inline-block; padding: 8px 16px; background: #2563eb; color: white; text-decoration: none; border-radius: 4px; font-weight: bold; font-size: 14px; }
-        .btn-link:hover { background: #1d4ed8; }
-        .section-title { background: #1e293b; color: white; padding: 10px 15px; font-size: 16px; margin-top: 25px; margin-bottom: 15px; border-radius: 4px; font-weight: bold; }
+        /* Exact Sarkari Result Red/Blue Theme Styling */
+        body { background-color: #f4f6f9; font-family: Arial, sans-serif; }
+        .post-container { max-width: 980px; margin: 20px auto; background: white; padding: 20px; border: 2px solid #b22222; border-radius: 6px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
         
-        /* Professional Clean Text Output */
-        .post-body { line-height: 1.8; font-size: 15px; color: #1e293b; word-wrap: break-word; }
-        .smart-heading { background: #eff6ff; color: #1e3c72; border-left: 4px solid #2563eb; padding: 8px 12px; font-weight: bold; font-size: 16px; margin: 18px 0 10px 0; border-radius: 2px; }
-        .smart-bullet { margin-left: 15px; padding: 6px 0; border-bottom: 1px dashed #e2e8f0; display: block; }
-        .smart-bullet::before { content: "👉 "; color: #2563eb; font-weight: bold; }
-        .post-body table { width: 100%; border-collapse: collapse; margin: 15px 0; }
-        .post-body table, .post-body th, .post-body td { border: 1px solid #cbd5e1; padding: 10px; text-align: left; }
+        .post-header { text-align: center; color: #b22222; font-size: 24px; font-weight: bold; margin-bottom: 15px; border-bottom: 2px solid #b22222; padding-bottom: 10px; }
+        
+        /* Top Quick Info Table */
+        .info-table { width: 100%; border-collapse: collapse; margin-bottom: 20px; }
+        .info-table th, .info-table td { border: 1px solid #cbd5e1; padding: 10px 12px; text-align: left; font-size: 14px; }
+        .info-table th { background-color: #f1f5f9; width: 30%; font-weight: bold; color: #0f172a; }
+        
+        .btn-link { display: inline-block; padding: 7px 15px; background: #2563eb; color: white; text-decoration: none; border-radius: 4px; font-weight: bold; font-size: 14px; }
+        .btn-link:hover { background: #1d4ed8; }
+        .section-title { background: #b22222; color: white; padding: 10px 15px; font-size: 17px; margin-top: 25px; margin-bottom: 15px; font-weight: bold; text-align: center; border-radius: 3px; }
+        
+        /* Sarkari Result 2-Column Grid Layout */
+        .sr-grid-box { display: flex; flex-wrap: wrap; border: 1px solid #1e3c72; margin-bottom: 20px; }
+        .sr-col { flex: 1; min-width: 280px; border: 1px solid #1e3c72; padding: 12px; background: #fff; }
+        .sr-col-title { background: #1e3c72; color: white; font-weight: bold; text-align: center; padding: 8px; margin: -12px -12px 10px -12px; font-size: 16px; }
+        
+        /* Body Styling for Tables & List Items */
+        .post-body { line-height: 1.8; font-size: 14px; color: #1e293b; }
+        .post-body ul { list-style-type: square; padding-left: 20px; margin-bottom: 15px; }
+        .post-body li { margin-bottom: 5px; }
+        
+        /* Sarkari Result Tables */
+        .post-body table { width: 100% !important; border-collapse: collapse !important; margin: 15px 0 !important; }
+        .post-body table, .post-body th, .post-body td { border: 1px solid #1e3c72 !important; padding: 10px !important; text-align: left !important; }
+        .post-body th { background-color: #1e3c72 !important; color: white !important; font-weight: bold !important; text-align: center !important; }
+        
+        /* Bullet Text Highlight */
+        .sr-item { display: block; padding: 4px 0; font-size: 14px; border-bottom: 1px dashed #e2e8f0; }
+        .sr-item::before { content: "• "; color: #b22222; font-weight: bold; }
+        
+        @media (max-width: 600px) {
+            .sr-grid-box { flex-direction: column; }
+        }
     </style>
 </head>
 <body>
 
 <header>
-    <div class="logo">ONLINEPUR</div>
-    <p>भारत का अपना विश्वसनीय जॉब एवं शिक्षा पोर्टल</p>
+    <div class="logo" style="color:#b22222; font-size: 28px; font-weight: bold; text-align: center; padding: 15px 0;">ONLINEPUR</div>
 </header>
-
-<nav>
-    <a href="index.html">← Back To Home</a>
-</nav>
 
 <div class="post-container">
     <h1 class="post-header" id="post-title">Loading Details...</h1>
@@ -74,14 +90,13 @@
     <div class="post-body" id="post-body-content"></div>
 </div>
 
-<footer>
+<footer style="text-align: center; padding: 20px; font-size: 14px; color: #64748b;">
     <p>© 2026 ONLINEPUR. All Rights Reserved.</p>
 </footer>
 
 <script>
 document.addEventListener("DOMContentLoaded", async function () {
 
-    // 1. Branding Auto Replace
     function cleanBranding(text) {
         if (!text) return "";
         return text
@@ -93,31 +108,69 @@ document.addEventListener("DOMContentLoaded", async function () {
             .replace(/Sarkari/gi, "ONLINEPUR");
     }
 
-    // 2. Smart Converter (Converts Unformatted Plain Text into Clean Layout)
-    function convertMessyTextToProfessionalHTML(rawText) {
+    // Smart Converter into 2-Column Sarkari Result Grid
+    function renderSarkariResultLayout(rawText) {
         if (!rawText) return "";
+        let text = cleanBranding(rawText);
 
-        let cleanText = cleanBranding(rawText);
+        // If raw HTML table is pasted, let markdown handle it cleanly
+        if (/<table/i.test(text)) {
+            return marked.parse(text);
+        }
 
-        // Define Main Headings
-        const headingKeywords = [
-            "Short Details", "Important Dates", "Application Fee", 
-            "Age Limit", "Vacancy Details", "Eligibility Criteria", 
-            "Selection Process", "How to Apply", "Pay Scale", "Salary Details"
-        ];
+        let lines = text.split('\n');
+        let datesContent = [];
+        let feeContent = [];
+        let generalContent = [];
 
-        headingKeywords.forEach(kw => {
-            const regex = new RegExp(`(${kw})`, "gi");
-            cleanText = cleanText.replace(regex, `<div class="smart-heading">$1</div>`);
+        let currentSection = 'general';
+
+        lines.forEach(line => {
+            let trimmed = line.trim();
+            if (!trimmed) return;
+
+            if (/Important Dates/i.test(trimmed)) {
+                currentSection = 'dates';
+                return;
+            } else if (/Application Fee/i.test(trimmed)) {
+                currentSection = 'fee';
+                return;
+            } else if (/Age Limit|Vacancy|Eligibility|How to Apply/i.test(trimmed)) {
+                currentSection = 'general';
+            }
+
+            if (currentSection === 'dates') {
+                datesContent.push(`<span class="sr-item">${trimmed}</span>`);
+            } else if (currentSection === 'fee') {
+                feeContent.push(`<span class="sr-item">${trimmed}</span>`);
+            } else {
+                if (trimmed.includes(':')) {
+                    generalContent.push(`<span class="sr-item">${trimmed}</span>`);
+                } else {
+                    generalContent.push(trimmed);
+                }
+            }
         });
 
-        // Convert inline label value patterns (e.g. "Last Date : 20 June" or "Minimum Age : 20") to bullet points
-        cleanText = cleanText.replace(/([A-Z0-9\s/()-]+:\s*[^:<]+)(?=\s+[A-Z]|$)/g, `<span class="smart-bullet">$1</span>`);
+        let gridHTML = "";
+        
+        // Build 2-Column Box if Dates or Fees are detected
+        if (datesContent.length > 0 || feeContent.length > 0) {
+            gridHTML += `
+            <div class="sr-grid-box">
+                <div class="sr-col">
+                    <div class="sr-col-title">Important Dates</div>
+                    ${datesContent.join('') || '<span class="sr-item">See Notification</span>'}
+                </div>
+                <div class="sr-col">
+                    <div class="sr-col-title">Application Fee</div>
+                    ${feeContent.join('') || '<span class="sr-item">See Notification</span>'}
+                </div>
+            </div>`;
+        }
 
-        // Handle paragraphs if marked exists
-        let formattedHTML = marked.parse(cleanText);
-
-        return formattedHTML;
+        let remainingText = generalContent.join('\n\n');
+        return gridHTML + marked.parse(remainingText);
     }
 
     const urlParams = new URLSearchParams(window.location.search);
@@ -173,7 +226,7 @@ document.addEventListener("DOMContentLoaded", async function () {
             document.getElementById('row-notif').style.display = 'none';
         }
 
-        // Render Extra Dynamic Links
+        // Custom Links Table
         const linksTable = document.getElementById('links-table');
         const customLinksMatch = frontmatterText.match(/custom_links:([\s\S]*?)(?=\n[a-z_]+:|$)/i);
         
@@ -193,8 +246,8 @@ document.addEventListener("DOMContentLoaded", async function () {
             });
         }
 
-        // Render Processed Body
-        document.getElementById('post-body-content').innerHTML = convertMessyTextToProfessionalHTML(bodyText);
+        // Render Sarkari Result Style Grid Output
+        document.getElementById('post-body-content').innerHTML = renderSarkariResultLayout(bodyText);
 
     } catch (err) {
         console.error("Error loading post:", err);
