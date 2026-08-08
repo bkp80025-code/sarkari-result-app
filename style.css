@@ -10,7 +10,6 @@ body {
     color: #333;
 }
 
-/* Header */
 header {
     background: linear-gradient(135deg, #1e3c72, #2a5298);
     color: white;
@@ -31,7 +30,6 @@ header p {
     opacity: 0.9;
 }
 
-/* Navbar */
 nav {
     background-color: #0f172a;
     display: flex;
@@ -41,9 +39,9 @@ nav {
 
 nav a {
     color: white;
-    padding: 12px 20px;
+    padding: 12px 18px;
     text-decoration: none;
-    font-size: 15px;
+    font-size: 14px;
     font-weight: 500;
     transition: 0.3s;
 }
@@ -52,17 +50,15 @@ nav a:hover {
     background-color: #2563eb;
 }
 
-/* Grid Layout */
 .container {
     max-width: 1200px;
     margin: 20px auto;
     padding: 0 10px;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     gap: 20px;
 }
 
-/* Cards / Boxes */
 .card {
     background: white;
     border-radius: 8px;
@@ -73,17 +69,20 @@ nav a:hover {
 
 .card-header {
     padding: 12px 15px;
-    font-size: 18px;
+    font-size: 17px;
     font-weight: bold;
     color: white;
     text-align: center;
 }
 
+/* Category Colors */
 .bg-blue { background-color: #2563eb; }
-.bg-green { background-color: #16a34a; }
 .bg-orange { background-color: #ea580c; }
+.bg-green { background-color: #16a34a; }
+.bg-purple { background-color: #9333ea; }
+.bg-teal { background-color: #0d9488; }
+.bg-red { background-color: #dc2626; }
 
-/* Job Links List */
 .job-list {
     list-style: none;
 }
@@ -99,6 +98,7 @@ nav a:hover {
     text-decoration: none;
     font-size: 14px;
     transition: 0.2s;
+    font-weight: 500;
 }
 
 .job-list li a:hover {
@@ -107,7 +107,6 @@ nav a:hover {
     padding-left: 20px;
 }
 
-/* Footer */
 footer {
     text-align: center;
     padding: 20px;
