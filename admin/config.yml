@@ -6,18 +6,36 @@ media_folder: "images/uploads"
 public_folder: "/images/uploads"
 
 collections:
-  - name: "jobs"
-    label: "Sarkari Job Posts"
+  - name: "posts"
+    label: "📢 All Job Posts"
     folder: "posts"
     create: true
+    delete: true
     slug: "{{slug}}"
     fields:
       - { label: "Post Title", name: "title", widget: "string" }
-      - { label: "Category", name: "category", widget: "select", options: ["Latest Jobs", "Admit Card", "Result", "Answer Key"] }
-      - { label: "Apply Start Date", name: "start_date", widget: "string" }
-      - { label: "Last Date", name: "last_date", widget: "string" }
-      - { label: "Fee Details", name: "fee_info", widget: "string" }
-      - { label: "Total Vacancy", name: "total_posts", widget: "string" }
-      - { label: "Apply Online Link", name: "apply_link", widget: "string" }
-      - { label: "Official Notification Link", name: "notification_link", widget: "string" }
+      - label: "Select Category"
+        name: "category"
+        widget: "select"
+        options:
+          - { label: "💼 Latest Jobs", value: "Latest Jobs" }
+          - { label: "🎫 Admit Card", value: "Admit Card" }
+          - { label: "📊 Result", value: "Result" }
+          - { label: "🔑 Answer Key", value: "Answer Key" }
+          - { label: "📄 Document", value: "Document" }
+          - { label: "📜 Sarkari Yojana", value: "Sarkari Yojana" }
+          - { label: "🌟 Common (Sabhi Sections Me)", value: "Common" }
+      - { label: "Apply Start Date", name: "start_date", widget: "string", required: false }
+      - { label: "Last Date", name: "last_date", widget: "string", required: false }
+      - { label: "Fee Details", name: "fee_info", widget: "string", required: false }
+      - { label: "Total Vacancy", name: "total_posts", widget: "string", required: false }
+      - { label: "Main Apply Link", name: "apply_link", widget: "string", required: false }
+      - { label: "Official Notification Link", name: "notification_link", widget: "string", required: false }
+      - label: "Extra Important Links (Add Unlimited Links)"
+        name: "custom_links"
+        widget: "list"
+        required: false
+        fields:
+          - { label: "Link Title (Name)", name: "title", widget: "string" }
+          - { label: "URL / Link", name: "url", widget: "string" }
       - { label: "Full Details / Body Text", name: "body", widget: "markdown" }
