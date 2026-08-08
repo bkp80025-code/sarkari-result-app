@@ -3,60 +3,71 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>OnlinePur - Latest Government Jobs, Results & Admit Card</title>
+    <title>ONLINEPUR - Latest Government Jobs, Results & Admit Card</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<!-- Header Section -->
 <header>
     <div class="logo">ONLINEPUR</div>
     <p>भारत का अपना विश्वसनीय जॉब एवं शिक्षा पोर्टल</p>
 </header>
 
-<!-- Navigation Bar -->
 <nav>
     <a href="index.html">Home</a>
     <a href="#latest-jobs">Latest Jobs</a>
-    <a href="#results">Results</a>
     <a href="#admit-card">Admit Card</a>
+    <a href="#results">Results</a>
     <a href="#answer-key">Answer Key</a>
+    <a href="#document">Document</a>
+    <a href="#yojana">Sarkari Yojana</a>
 </nav>
 
-<!-- Main Grid Container -->
+<!-- Main Grid Container (6 Boxes) -->
 <div class="container">
 
-    <!-- Column 1: Latest Jobs -->
-    <div class="card">
-        <div class="card-header bg-blue">Latest Jobs</div>
-        <ul class="job-list" id="job-list-container">
-            <!-- Dynamic jobs from posts.js -->
-        </ul>
+    <!-- Box 1: Latest Jobs -->
+    <div class="card" id="latest-jobs">
+        <div class="card-header bg-blue">💼 Latest Jobs</div>
+        <ul class="job-list" id="job-list-container"></ul>
     </div>
 
-    <!-- Column 2: Results -->
-    <div class="card">
-        <div class="card-header bg-green">Results</div>
-        <ul class="job-list" id="result-list-container">
-            <!-- Dynamic results from posts.js -->
-        </ul>
+    <!-- Box 2: Admit Card -->
+    <div class="card" id="admit-card">
+        <div class="card-header bg-orange">🎫 Admit Card</div>
+        <ul class="job-list" id="admit-list-container"></ul>
     </div>
 
-    <!-- Column 3: Admit Card -->
-    <div class="card">
-        <div class="card-header bg-orange">Admit Card</div>
-        <ul class="job-list" id="admit-list-container">
-            <!-- Dynamic admit cards from posts.js -->
-        </ul>
+    <!-- Box 3: Results -->
+    <div class="card" id="results">
+        <div class="card-header bg-green">📊 Results</div>
+        <ul class="job-list" id="result-list-container"></ul>
+    </div>
+
+    <!-- Box 4: Answer Key -->
+    <div class="card" id="answer-key">
+        <div class="card-header bg-purple">🔑 Answer Key</div>
+        <ul class="job-list" id="answer-list-container"></ul>
+    </div>
+
+    <!-- Box 5: Document -->
+    <div class="card" id="document">
+        <div class="card-header bg-teal">📄 Document / Certificate</div>
+        <ul class="job-list" id="doc-list-container"></ul>
+    </div>
+
+    <!-- Box 6: Sarkari Yojana -->
+    <div class="card" id="yojana">
+        <div class="card-header bg-red">📜 Sarkari Yojana</div>
+        <ul class="job-list" id="yojana-list-container"></ul>
     </div>
 
 </div>
 
 <footer>
-    <p>© 2026 OnlinePur. All Rights Reserved.</p>
+    <p>© 2026 ONLINEPUR. All Rights Reserved.</p>
 </footer>
 
 <script src="posts.js"></script>
 </body>
 </html>
-
