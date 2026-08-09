@@ -3,151 +3,159 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title id="page-title">Loading... - ONLINEPUR</title>
-    <!-- Marked.js library to parse Markdown & Tables -->
+    <title id="page-title">ONLINEPUR - Job & Result Updates</title>
+    <!-- Marked.js library for high-speed markdown parsing -->
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
     <style>
+        * { box-sizing: border-box; }
         body { 
-            background-color: #f4f6f9; 
-            font-family: Georgia, 'Times New Roman', serif; 
-            color: #111;
-            margin: 0;
-            padding: 10px;
+            font-family: system-ui, -apple-system, sans-serif; 
+            background: #f1f5f9; 
+            margin: 0; 
+            padding: 15px; 
+            color: #1e293b; 
+        }
+        
+        .header-bar {
+            text-align: center;
+            padding: 14px 0;
+            background: #ffffff;
+            border-bottom: 4px solid #6b0d23;
+            margin-bottom: 16px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+
+        .site-logo {
+            font-size: 26px;
+            font-weight: 800;
+            color: #6b0d23;
+            text-decoration: none;
+            letter-spacing: 1px;
         }
 
         .post-container { 
-            max-width: 980px; 
-            margin: 15px auto; 
+            max-width: 950px; 
+            margin: 0 auto; 
             background: #ffffff; 
-            padding: 20px; 
-            border: 2px solid #6b0d23; 
-            border-radius: 4px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.08); 
+            padding: 24px; 
+            border-radius: 10px; 
+            border: 1px solid #cbd5e1; 
+            box-shadow: 0 4px 8px rgba(0,0,0,0.05); 
         }
 
-        /* Top Header Logo */
-        .site-logo {
-            text-align: center;
-            font-size: 28px;
-            font-weight: bold;
-            color: #6b0d23;
-            margin-bottom: 10px;
-            text-decoration: none;
-            display: block;
-        }
-
-        /* Frontmatter Info Grid */
+        /* Top Key Details Grid Table */
         .info-table { 
             width: 100%; 
             border-collapse: collapse; 
             margin-bottom: 20px; 
-            font-size: 14px; 
-            border: 2px solid #6b0d23;
+            font-size: 15px; 
+            border: 1px solid #cbd5e1;
+            border-radius: 6px;
+            overflow: hidden;
         }
         .info-table th, .info-table td { 
-            border: 1px solid #000; 
-            padding: 8px 12px; 
+            border: 1px solid #cbd5e1; 
+            padding: 10px; 
             text-align: left; 
         }
         .info-table th { 
             background-color: #f8fafc; 
             width: 30%; 
             color: #6b0d23; 
-            font-weight: bold;
+            font-weight: 700;
         }
 
-        /* Top Direct Buttons */
+        /* Action Buttons */
         .btn-link { 
             display: inline-block; 
-            padding: 7px 16px; 
+            padding: 8px 16px; 
             background: #2563eb; 
-            color: #fff; 
+            color: #ffffff !important; 
             text-decoration: none; 
-            border-radius: 3px; 
-            font-weight: bold; 
+            border-radius: 5px; 
+            font-weight: 600; 
             font-size: 14px; 
-            font-family: Arial, sans-serif;
+            margin-right: 6px;
+            margin-bottom: 4px;
         }
         .btn-link:hover { background: #1d4ed8; }
+        .btn-green { background: #16a34a; }
+        .btn-green:hover { background: #15803d; }
 
-        /* Main Post Content Styling (Markdown Rendered Area) */
-        .post-body { 
-            line-height: 1.6; 
-            font-size: 15px; 
-            color: #000; 
+        /* Post Body Styles matching Preview */
+        .post-body { font-size: 16px; line-height: 1.7; color: #1e293b; }
+        .post-body h1 { 
+            font-size: 22px; 
+            color: #6b0d23; 
+            border-bottom: 2px solid #6b0d23; 
+            padding-bottom: 6px; 
+            margin-top: 18px; 
+            margin-bottom: 14px; 
         }
-
-        /* Headings styling */
-        .post-body h1, .post-body h2, .post-body h3 {
-            background-color: #6b0d23;
-            color: #ffffff;
-            text-align: center;
-            padding: 8px;
-            font-size: 16px;
-            font-weight: bold;
-            margin-top: 25px;
-            margin-bottom: 12px;
-            border: 1px solid #000;
-            border-radius: 2px;
+        .post-body h2, .post-body h3 { 
+            background-color: #6b0d23; 
+            color: #ffffff; 
+            padding: 8px 14px; 
+            font-size: 16px; 
+            font-weight: 700; 
+            margin-top: 22px; 
+            margin-bottom: 12px; 
+            border-radius: 5px; 
         }
-
-        /* Tables styling (Markdown Tables Render Automatically) */
         .post-body table { 
             width: 100% !important; 
             border-collapse: collapse !important; 
-            margin: 15px 0 !important; 
-            border: 2px solid #000 !important;
+            margin: 16px 0 !important; 
+            border: 1px solid #cbd5e1 !important; 
+            display: block; 
+            overflow-x: auto; 
         }
+        @media (min-width: 640px) { .post-body table { display: table; } }
         .post-body table, .post-body th, .post-body td { 
-            border: 1px solid #000 !important; 
-            padding: 8px 10px !important; 
-            font-size: 14px !important;
+            border: 1px solid #cbd5e1 !important; 
+            padding: 10px 12px !important; 
+            font-size: 15px !important; 
         }
         .post-body th { 
             background-color: #6b0d23 !important; 
             color: #ffffff !important; 
-            font-weight: bold !important; 
-            text-align: center !important; 
+            font-weight: 700 !important; 
+            text-align: left !important;
         }
-        .post-body td {
-            background-color: #fff;
+        .post-body tr:nth-child(even) { background-color: #f8fafc; }
+        .post-body blockquote { 
+            background: #fefce8; 
+            border-left: 4px solid #eab308; 
+            margin: 14px 0; 
+            padding: 10px 14px; 
+            border-radius: 0 6px 6px 0; 
+            color: #854d0e; 
+        }
+        .post-body a { color: #2563eb; font-weight: 600; text-decoration: underline; }
+        .post-body p { margin-bottom: 12px; }
+        .post-body ul, .post-body ol { padding-left: 20px; margin: 10px 0; }
+        .post-body li { margin-bottom: 6px; }
+
+        footer {
+            text-align: center;
+            padding: 20px 0;
+            font-size: 13px;
+            color: #64748b;
         }
 
-        /* Lists */
-        .post-body ul, .post-body ol { 
-            padding-left: 25px; 
-            margin: 10px 0; 
-        }
-        .post-body li { 
-            margin-bottom: 5px; 
-        }
-
-        /* Blockquotes / Notes */
-        .post-body blockquote {
-            background: #fffbeeb0;
-            border-left: 4px solid #6b0d23;
-            margin: 15px 0;
-            padding: 10px 15px;
-            font-style: italic;
-        }
-
-        /* Links inside body */
-        .post-body a {
-            color: #2563eb;
-            font-weight: bold;
-            text-decoration: underline;
-        }
-
-        @media (max-width: 600px) {
-            .post-container { padding: 10px; }
-            .info-table th, .info-table td { font-size: 13px; padding: 6px; }
-            .post-body table, .post-body th, .post-body td { font-size: 13px !important; padding: 6px !important; }
+        @media (max-width: 640px) {
+            .post-container { padding: 14px; }
+            .info-table th, .info-table td { font-size: 13px; padding: 8px; }
+            .post-body { font-size: 15px; }
         }
     </style>
 </head>
 <body>
 
-<a href="/" class="site-logo">ONLINEPUR</a>
+<div class="header-bar">
+    <a href="/" class="site-logo">ONLINEPUR</a>
+</div>
 
 <div class="post-container">
     <table class="info-table" id="meta-table" style="display: none;">
@@ -157,7 +165,7 @@
         </tr>
         <tr>
             <th>Important Dates</th>
-            <td>Start: <b id="post-start-date">-</b> | Last Date: <b id="post-last-date" style="color:red;">-</b></td>
+            <td>Start Date: <b id="post-start-date">-</b> | Last Date: <b id="post-last-date" style="color:#dc2626;">-</b></td>
         </tr>
         <tr>
             <th>Application Fee</th>
@@ -168,19 +176,18 @@
             <td id="post-vacancy" style="font-weight:bold; color:#6b0d23;">-</td>
         </tr>
         <tr id="row-apply">
-            <th>Apply / Official Link</th>
+            <th>Direct Links</th>
             <td>
                 <a href="#" id="post-apply-btn" target="_blank" class="btn-link">Apply Online</a>
-                <a href="#" id="post-notif-btn" target="_blank" class="btn-link" style="background:#16a34a; margin-left: 8px;">Notification</a>
+                <a href="#" id="post-notif-btn" target="_blank" class="btn-link btn-green">Notification</a>
             </td>
         </tr>
     </table>
 
-    <!-- Markdown Content Will Render Here Exactly As Formatted -->
     <div class="post-body" id="post-body-content">Loading content...</div>
 </div>
 
-<footer style="text-align: center; padding: 20px; font-size: 13px; color: #666;">
+<footer>
     © 2026 ONLINEPUR. All Rights Reserved.
 </footer>
 
@@ -203,7 +210,7 @@ document.addEventListener("DOMContentLoaded", async function () {
 
         let text = await res.text();
 
-        // Separate Frontmatter (metadata) & Body
+        // Frontmatter aur Body split karein
         const parts = text.split(/^---$/m);
         let frontmatterText = parts[1] || "";
         let bodyText = parts.slice(2).join("---") || text;
@@ -221,7 +228,6 @@ document.addEventListener("DOMContentLoaded", async function () {
         const applyLink = getField('apply_link');
         const notifLink = getField('notification_link');
 
-        // Show Top Table only if metadata exists
         if (category || startDate || applyLink) {
             document.getElementById('meta-table').style.display = 'table';
             document.getElementById('post-category').innerText = category || "N/A";
@@ -237,16 +243,22 @@ document.addEventListener("DOMContentLoaded", async function () {
             else document.getElementById('post-notif-btn').style.display = 'none';
         }
 
-        // Automatic Branding Clean-up (Sarkari Result -> ONLINEPUR)
+        // Automatic Branding Replacement
         bodyText = bodyText
             .replace(/Sarkari\s*Result/gi, "ONLINEPUR")
             .replace(/Sarkari\s*Exam/gi, "ONLINEPUR")
             .replace(/Sarkari/gi, "ONLINEPUR");
 
-        // Render full Markdown content cleanly
+        // Set Marked options
+        marked.setOptions({
+            breaks: true,
+            gfm: true
+        });
+
+        // Render Markdown to HTML
         document.getElementById('post-body-content').innerHTML = marked.parse(bodyText);
 
-        // Update Page Title automatically from H1 in Markdown
+        // Update Title dynamically
         const h1Match = bodyText.match(/^#\s+(.*)$/m);
         if (h1Match) {
             document.title = h1Match[1] + " - ONLINEPUR";
