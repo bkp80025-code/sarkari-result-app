@@ -1,86 +1,215 @@
 ---
-title: Bihar Vidhan Parishad Security Guard Recruitment 2026
-category: Result
+title: UP Anganwadi Bharti Recruitment 2026 | 60000+ Posts | Online Form
+category: Common
 ---
-# Bihar Vidhan Parishad Security Guard Recruitment 2026
+Hello friends, welcome to Sarkari Result.
 
-## Bihar Vidhan Parishad Security Guard Recruitment 2026
+Today we are going to talk about the latest update regarding **UP Anganwadi Bharti Recruitment 2026**.
 
-**Bihar Vidhan Parishad Sachivalaya** has released various important notices for **Security Guard / Suraksha Prahari Recruitment 2026** under **Advertisement No. 03/2023**.
+Uttar Pradesh District Program Officer has released recruitment information for Anganwadi posts in various districts of Uttar Pradesh.
 
-The recruitment process has reached the **Interview Stage** after the Physical Measurement and RFID-based Physical Efficiency Test.
+According to the available information, this recruitment is being conducted for **60000+ posts**.
 
-## 📌 Bihar Vidhan Parishad Security Guard 2026 – Overview
+The application process is district-wise, so candidates should check the vacancy and last date of their respective district before applying.
 
-# 📅 Important Dates
+Now let's check all the important details of UP Anganwadi Bharti Recruitment 2026.
 
-The official notice board confirms the Physical Test result dated **21 May 2026**, re-measurement result dated **06 June 2026**, and Interview notices dated **06 and 08 June 2026**.
+## UP Anganwadi Bharti Recruitment 2026 – Short Details
 
-# 💰 Application Fee
+**Post Name:** UP Anganwadi Worker & Helper
 
-> **Note:** Candidates should verify the fee from the original recruitment advertisement before final use.
+**Total Posts:** 60000+ Posts
 
-# 🎓 Educational Qualification
+**Application Mode:** Online
 
-Candidates must have passed Intermediate / 10+2 from a recognized Board.
+**Job Location:** Uttar Pradesh
 
-# 🎂 Age Limit
+**Application Start:** November 2025
 
-**Age relaxation** will be applicable to reserved category candidates as per government rules.
+**Last Date:** District Wise
 
-# 🏃 Physical Standard – Male
+## Important Dates
 
-# 🏃‍♀️ Physical Standard – Female
+The notification was released in **November 2025**.
 
-The official 2026 notice confirms that the Security Guard examination included **Physical Measurement and RFID-based race**, scheduled from **21 April to 28 April 2026**.
+The online application process has started from **November 2025**.
 
-# 📊 Vacancy Details
+The last date to apply is **District Wise**.
 
-# 💼 Selection Process
+The form completion last date is also **District Wise**.
 
-The official website lists the **second-stage Interview examination notice** dated 06 June 2026 and the **Interview Admit Card notice** dated 08 June 2026.
+Candidates should check the notification of their concerned district for the exact last date.
 
-# 🏃 Physical Test 2026
+## Application Fee
 
-The official notice specifically states that the Physical Measurement and RFID-based race examination was conducted from **21 April 2026 to 28 April 2026**.
+There is **No Application Fee** for any candidate.
 
-# 🎤 Interview Details
+## Age Limit
 
-# 💵 Salary / Pay Scale
+The minimum age required for UP Anganwadi Bharti is **18 Years**.
 
-Other allowances and benefits will be applicable according to the applicable government/service rules.
+The maximum age limit is **35 Years**.
 
-# 📄 Documents Required
+Age relaxation will be provided to eligible candidates as per the applicable UP Anganwadi recruitment rules.
 
-# 🔎 How to Check Security Guard Result 2026?
+The age will be calculated as on **01 July 2025**.
 
-# 🔗 Important Links
+## Total Post
 
-### Official Website
+The recruitment is being conducted for **60000+ Anganwadi Posts**.
 
-**Bihar Vidhan Parishad:**
-<https://vidhanparishad.bihar.gov.in/>
+The vacancies are released district-wise for different Worker and Helper posts.
 
-The official recruitment notice board currently shows the Security Guard notices for the Physical Test, Physical Result, Re-Physical Result and Interview stage.
+## Vacancy Details
 
-# ⚠️ Latest Update
+The vacancy is available in various districts of Uttar Pradesh.
 
-As of the latest official notices available:
+Some of the latest district-wise vacancies include:
 
-**21 May 2026:** Physical Measurement + RFID Race Result released.
+**Azamgarh – Helper:** 265 Posts
 
-**06 June 2026:** Re-Physical Measurement Result released.
+**Ambedkar Nagar – Helper:** 105 Posts
 
-**06 June 2026:** Interview examination notice released.
+**Ambedkar Nagar – Worker:** 02 Posts
 
-**08 June 2026:** Interview Admit Card notice released.
+**Bhadohi – Helper:** 87 Posts
 
-Therefore, candidates should check the official Bihar Vidhan Parishad website regularly for the **Final Result / Final Selection / Document Verification / Joining** notice.
+**Sant Kabir Nagar – Worker:** 192 Posts
 
-## Bihar Vidhan Parishad Security Guard 2026 – Short Summary
+**Farrukhabad – Helper:** 140 Posts
 
-### Disclaimer
+**Kushinagar – Worker:** 245 Posts
 
-This page is prepared for informational purposes. Candidates should verify the latest information, eligibility, vacancy, dates, result, document verification and joining details from the **official Bihar Vidhan Parishad website and official notification** before taking any action.
+**Hapur – Worker:** 120 Posts
 
-**ParticularDetailsOrganization Name**Bihar Vidhan Parishad Sachivalaya**Post Name**Security Guard / Suraksha Prahari**Advertisement No.**03/2023**Total Post**56 Posts**Job Location**Bihar**Application Mode**Online**Category**Government Job**Exam Mode**Physical Test + RFID Race + Interview**Official Website**vidhanparishad.bihar.gov.in**EventDate**Notification Date2023Online Application Start25 July 2023Online Application Last Date21 August 2023Re-Application Start16 October 2024Re-Application Last Date25 October 2024Physical Test Date21–28 April 2026Physical Test Result21 May 2026Re-Physical Measurement27 May 2026Re-Physical Result06 June 2026Interview Notice06 June 2026Interview Admit Card08 June 2026Final Result**Check Official WebsiteCategoryApplication Fee**General / EWS / BC / EBC Male₹800/-SC / ST₹400/-Female Candidates₹400/-PwD Candidates₹400/-**Payment Mode**Online**PostQualification**Security Guard / Suraksha Prahari**12th / Intermediate PassCategoryAge Limit**Minimum Age**18 Years**Maximum Age**As per Recruitment Rules**Age RelaxationAs per Bihar Government Rules**Physical RequirementDetails**Height**167.5 cm**Chest**76.5 – 81 cm**Running**1.6 KM in 6 Minutes**Test TypePhysical Measurement + RFID Based Race**Physical RequirementDetails**Height**154.6 cm**Running**1 KM in 6 Minutes**Test TypePhysical Measurement + RFID Based Race**CategoryNo. of Posts**General / UR24EWS05EBC10BC07BC Female02SC08ST00**Total56StageSelection Process**1️⃣Physical Measurement Test2️⃣RFID Based Physical Efficiency Test / Race3️⃣Interview4️⃣Document Verification5️⃣Final Selection**ExamDate / Details**Physical Measurement21–28 April 2026RFID Based Race21–28 April 2026Physical Test Result21 May 2026Re-Physical Measurement27 May 2026Re-Physical Result06 June 2026**ParticularDetails**RecruitmentSecurity GuardAdvertisement No.03/2023StageSecond StageExamInterviewInterview Notice06 June 2026Interview Admit Card08 June 2026**PostPay LevelPay Scale**Security GuardLevel-3₹21,700 – ₹69,100/-**DocumentRequired**10th Mark Sheet / Certificate✅12th Mark Sheet / Certificate✅Aadhaar Card / ID Proof✅Caste CertificateIf ApplicableEWS CertificateIf ApplicableResidence CertificateIf ApplicableNCC CertificateIf ApplicableSports CertificateIf ApplicablePassport Size Photo✅Application Form✅Admit Card✅Other Required DocumentsAs per Notice**StepProcess**1Visit Bihar Vidhan Parishad Official Website2Open **Recruitment / Notice Board**3Search **Advertisement No. 03/2023**4Select Security Guard / Suraksha Prahari Notice5Open the Result PDF6Search your Roll Number7Download and Save the PDF**Important LinkStatus**Official Website**Available**Recruitment Notice**Available**Physical Test Admit Card**Available / Process Completed**Physical Test Result**Available**Re-Physical Result**Available**Interview Admit Card**Available**Final Result**Check Official Notice BoardInformationDetailsPost**Security Guard**Vacancy**56**Advertisement No.**03/2023**Qualification**12th Pass**Minimum Age**18 Years**Male Height**167.5 cm**Female Height**154.6 cm**Male Running**1.6 KM / 6 Minutes**Female Running**1 KM / 6 Minutes**Physical Test**21–28 April 2026**Physical Result**21 May 2026**Interview Notice**06 June 2026**Interview Admit Card**08 June 2026**Final Result**Check Official Website**Official Website**vidhanparishad.bihar.gov.in
+**Hapur – Helper:** 197 Posts
+
+**Etah – Worker:** 133 Posts
+
+**Etah – Helper:** 130 Posts
+
+**Sitapur – Worker:** 365 Posts
+
+**Sitapur – Helper:** 306 Posts
+
+**Lakhimpur Khiri – Worker:** 419 Posts
+
+**Lakhimpur Khiri – Helper:** 213 Posts
+
+**Bulandshahar – Worker:** 255 Posts
+
+**Firozabad – Worker:** 101 Posts
+
+**Basti – Helper:** 112 Posts
+
+**Basti – Worker:** 138 Posts
+
+**Saharanpur – Worker:** 250 Posts
+
+**Meerut – Helper:** 313 Posts
+
+**Ayodhya – Worker:** 220 Posts
+
+**Unnao – Worker:** 336 Posts
+
+**Ghaziabad – Helper:** 341 Posts
+
+**Ghaziabad – Worker:** 167 Posts
+
+Candidates can check the complete district-wise vacancy list before applying.
+
+## Education Qualification
+
+Candidates who have passed **Class 12th / 10+2 Intermediate Examination** from a recognized board are eligible for the applicable post, subject to the conditions mentioned in the district notification.
+
+This recruitment is for **Female Candidates**.
+
+Candidates should also check the applicable district and residence requirements before submitting the application form.
+
+## How To Apply
+
+Eligible candidates can apply online for UP Anganwadi Recruitment 2026.
+
+First, visit the applicable official recruitment website.
+
+Select your concerned district.
+
+Read the recruitment notification carefully.
+
+Check the eligibility, vacancy and last date.
+
+After that, complete the online application form.
+
+Enter all required personal and educational details.
+
+Upload the required documents.
+
+Check the complete application form carefully before submitting it.
+
+Submit the application form.
+
+After successful submission, take a printout or save the application form for future reference.
+
+## Selection Process
+
+The selection for the applicable Anganwadi posts will be made according to the recruitment rules.
+
+The available recruitment information mentions **Merit List** as the selection method.
+
+Candidates should check the official district notification for complete selection details.
+
+## Important Links
+
+Candidates can find the following links in the recruitment notification:
+
+**Apply Online**
+
+**Registration**
+
+**Login**
+
+**Official Notification**
+
+**Official Website**
+
+The application link can be different for different districts.
+
+Therefore, candidates should select their district carefully before applying.
+
+## Important Questions
+
+**Question: When did the UP Anganwadi Bharti application start?**
+
+Answer: The application process started in November 2025, with district-wise applications.
+
+**Question: What is the total number of posts?**
+
+Answer: The available recruitment information mentions 60000+ posts.
+
+**Question: What is the application fee?**
+
+Answer: There is no application fee for candidates.
+
+**Question: What is the age limit?**
+
+Answer: The minimum age is 18 years and the maximum age is 35 years.
+
+**Question: Who can apply?**
+
+Answer: Eligible female candidates who fulfill the required educational, age, district and other conditions can apply.
+
+**Question: What is the last date?**
+
+Answer: The last date is district-wise, so candidates should check their concerned district notification.
+
+## Final Words
+
+So friends, this was the complete information about **UP Anganwadi Bharti Recruitment 2026**.
+
+If you are eligible and interested in this recruitment, check your district-wise vacancy and apply before the last date.
+
+For the latest Government Jobs, Admit Card, Result and Recruitment updates, keep visiting **Sarkari Result**.
+
+Thank you for watching.
+
+**Best of Luck!**
