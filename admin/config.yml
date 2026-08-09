@@ -1,6 +1,9 @@
 backend:
-  name: git-gateway
+  name: github
+  repo: bkp80025-code/sarkari-result-app
   branch: main
+  base_url: https://sarkari-result-app.bkp80025.workers.dev
+  auth_endpoint: /auth
 
 media_folder: "images/uploads"
 public_folder: "/images/uploads"
