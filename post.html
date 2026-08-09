@@ -3,309 +3,198 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title id="page-title">Job Details - ONLINEPUR</title>
+    <title id="page-title">Loading... - ONLINEPUR</title>
+    <!-- Marked.js library to parse Markdown & Tables -->
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
     <style>
-        /* Compact Sarkari Result Layout Matching Image Exact Font & Spacing */
         body { 
-            background-color: #ffffff; 
+            background-color: #f4f6f9; 
             font-family: Georgia, 'Times New Roman', serif; 
-            color: #000;
+            color: #111;
             margin: 0;
             padding: 10px;
         }
 
         .post-container { 
             max-width: 980px; 
-            margin: 10px auto; 
-            background: white; 
-            padding: 15px; 
+            margin: 15px auto; 
+            background: #ffffff; 
+            padding: 20px; 
             border: 2px solid #6b0d23; 
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1); 
+            border-radius: 4px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08); 
         }
 
-        /* Header Style */
-        .post-header { 
-            text-align: center; 
-            color: #6b0d23; 
-            font-size: 20px; 
-            font-weight: bold; 
-            margin-bottom: 15px; 
-            border-bottom: 2px solid #6b0d23; 
-            padding-bottom: 8px; 
-            line-height: 1.3;
+        /* Top Header Logo */
+        .site-logo {
+            text-align: center;
+            font-size: 28px;
+            font-weight: bold;
+            color: #6b0d23;
+            margin-bottom: 10px;
+            text-decoration: none;
+            display: block;
         }
 
-        /* Top Quick Info Table */
+        /* Frontmatter Info Grid */
         .info-table { 
             width: 100%; 
             border-collapse: collapse; 
-            margin-bottom: 15px; 
+            margin-bottom: 20px; 
             font-size: 14px; 
             border: 2px solid #6b0d23;
         }
         .info-table th, .info-table td { 
             border: 1px solid #000; 
-            padding: 8px 10px; 
+            padding: 8px 12px; 
             text-align: left; 
-            line-height: 1.5;
         }
         .info-table th { 
             background-color: #f8fafc; 
             width: 30%; 
-            font-weight: bold; 
             color: #6b0d23; 
-            font-size: 14px;
+            font-weight: bold;
         }
 
-        /* Buttons */
+        /* Top Direct Buttons */
         .btn-link { 
             display: inline-block; 
-            padding: 6px 14px; 
+            padding: 7px 16px; 
             background: #2563eb; 
-            color: white; 
+            color: #fff; 
             text-decoration: none; 
             border-radius: 3px; 
             font-weight: bold; 
-            font-size: 13px; 
+            font-size: 14px; 
             font-family: Arial, sans-serif;
         }
         .btn-link:hover { background: #1d4ed8; }
 
-        /* Section Title */
-        .section-title { 
-            background: #6b0d23; 
-            color: white; 
-            padding: 8px 12px; 
-            font-size: 16px; 
-            margin-top: 20px; 
-            margin-bottom: 12px; 
-            font-weight: bold; 
-            text-align: center; 
-        }
-
-        /* Sarkari Result 2-Column Grid Layout */
-        .sr-grid-box { 
-            display: flex; 
-            flex-wrap: wrap; 
-            border: 1px solid #000; 
-            margin-bottom: 15px; 
-        }
-        .sr-col { 
-            flex: 1; 
-            min-width: 280px; 
-            border: 1px solid #000; 
-            padding: 10px 12px; 
-            background: #fff; 
-        }
-        .sr-col-title { 
-            background: #6b0d23; 
-            color: white; 
-            font-weight: bold; 
-            text-align: center; 
-            padding: 6px; 
-            margin: -10px -12px 10px -12px; 
-            font-size: 15px; 
-        }
-
-        /* Compact Text Formatting */
+        /* Main Post Content Styling (Markdown Rendered Area) */
         .post-body { 
-            line-height: 1.5; 
-            font-size: 14px; 
+            line-height: 1.6; 
+            font-size: 15px; 
             color: #000; 
         }
 
+        /* Headings styling */
         .post-body h1, .post-body h2, .post-body h3 {
             background-color: #6b0d23;
             color: #ffffff;
             text-align: center;
-            padding: 6px;
-            font-size: 15px;
+            padding: 8px;
+            font-size: 16px;
             font-weight: bold;
-            margin-top: 15px;
-            margin-bottom: 10px;
+            margin-top: 25px;
+            margin-bottom: 12px;
             border: 1px solid #000;
+            border-radius: 2px;
         }
 
-        .post-body ul { 
-            list-style-type: disc; 
-            padding-left: 20px; 
-            margin: 5px 0 10px 0; 
-        }
-        .post-body li { 
-            margin-bottom: 3px; 
-            font-size: 14px;
-        }
-
-        /* Compact Table Styling */
+        /* Tables styling (Markdown Tables Render Automatically) */
         .post-body table { 
             width: 100% !important; 
             border-collapse: collapse !important; 
-            margin: 12px 0 !important; 
-            border: 1px solid #000 !important;
+            margin: 15px 0 !important; 
+            border: 2px solid #000 !important;
         }
         .post-body table, .post-body th, .post-body td { 
             border: 1px solid #000 !important; 
-            padding: 6px 8px !important; 
+            padding: 8px 10px !important; 
             font-size: 14px !important;
         }
         .post-body th { 
             background-color: #6b0d23 !important; 
-            color: white !important; 
+            color: #ffffff !important; 
             font-weight: bold !important; 
             text-align: center !important; 
-            font-size: 14px !important;
+        }
+        .post-body td {
+            background-color: #fff;
         }
 
-        .sr-item { 
-            display: block; 
-            padding: 3px 0; 
-            font-size: 14px; 
-            color: #000;
+        /* Lists */
+        .post-body ul, .post-body ol { 
+            padding-left: 25px; 
+            margin: 10px 0; 
+        }
+        .post-body li { 
+            margin-bottom: 5px; 
+        }
+
+        /* Blockquotes / Notes */
+        .post-body blockquote {
+            background: #fffbeeb0;
+            border-left: 4px solid #6b0d23;
+            margin: 15px 0;
+            padding: 10px 15px;
+            font-style: italic;
+        }
+
+        /* Links inside body */
+        .post-body a {
+            color: #2563eb;
+            font-weight: bold;
+            text-decoration: underline;
         }
 
         @media (max-width: 600px) {
-            .sr-grid-box { flex-direction: column; }
-            .post-header { font-size: 18px; }
+            .post-container { padding: 10px; }
             .info-table th, .info-table td { font-size: 13px; padding: 6px; }
+            .post-body table, .post-body th, .post-body td { font-size: 13px !important; padding: 6px !important; }
         }
     </style>
 </head>
 <body>
 
-<header>
-    <div class="logo" style="color:#6b0d23; font-size: 26px; font-weight: bold; text-align: center; padding: 10px 0;">ONLINEPUR</div>
-</header>
+<a href="/" class="site-logo">ONLINEPUR</a>
 
 <div class="post-container">
-    <h1 class="post-header" id="post-title">Loading Details...</h1>
-
-    <table class="info-table">
+    <table class="info-table" id="meta-table" style="display: none;">
         <tr>
             <th>Category</th>
             <td id="post-category">-</td>
         </tr>
         <tr>
             <th>Important Dates</th>
-            <td>Start Date: <b id="post-start-date" style="color:#000;">-</b> <br> Last Date: <b id="post-last-date" style="color:#d9381e; font-weight:bold;">-</b></td>
+            <td>Start: <b id="post-start-date">-</b> | Last Date: <b id="post-last-date" style="color:red;">-</b></td>
         </tr>
         <tr>
             <th>Application Fee</th>
             <td id="post-fee">-</td>
         </tr>
         <tr>
-            <th>Total Vacancy / Posts</th>
-            <td id="post-vacancy" style="font-weight:bold; font-size:15px; color:#6b0d23;">-</td>
+            <th>Total Vacancy</th>
+            <td id="post-vacancy" style="font-weight:bold; color:#6b0d23;">-</td>
         </tr>
-    </table>
-
-    <div class="section-title">🔗 Important Direct Links</div>
-    <table class="info-table" id="links-table">
         <tr id="row-apply">
-            <th style="width: 35%;">Apply Online</th>
-            <td><a href="#" id="post-apply-btn" target="_blank" class="btn-link">Click Here</a></td>
-        </tr>
-        <tr id="row-notif">
-            <th>Official Notification</th>
-            <td><a href="#" id="post-notif-btn" target="_blank" class="btn-link" style="background:#16a34a;">Download Notification</a></td>
+            <th>Apply / Official Link</th>
+            <td>
+                <a href="#" id="post-apply-btn" target="_blank" class="btn-link">Apply Online</a>
+                <a href="#" id="post-notif-btn" target="_blank" class="btn-link" style="background:#16a34a; margin-left: 8px;">Notification</a>
+            </td>
         </tr>
     </table>
 
-    <div class="section-title">📑 Full Details & Instructions</div>
-    <div class="post-body" id="post-body-content"></div>
+    <!-- Markdown Content Will Render Here Exactly As Formatted -->
+    <div class="post-body" id="post-body-content">Loading content...</div>
 </div>
 
-<footer style="text-align: center; padding: 15px; font-size: 13px; color: #64748b; font-family: Arial, sans-serif;">
-    <p>© 2026 ONLINEPUR. All Rights Reserved.</p>
+<footer style="text-align: center; padding: 20px; font-size: 13px; color: #666;">
+    © 2026 ONLINEPUR. All Rights Reserved.
 </footer>
 
 <script>
 document.addEventListener("DOMContentLoaded", async function () {
-
-    function cleanBranding(text) {
-        if (!text) return "";
-        return text
-            .replace(/Sarkari\s*Result/gi, "ONLINEPUR")
-            .replace(/Sarkari\s*Exam/gi, "ONLINEPUR")
-            .replace(/Sarkari\s*Naukri/gi, "ONLINEPUR")
-            .replace(/SarkariResult/gi, "ONLINEPUR")
-            .replace(/SarkariExam/gi, "ONLINEPUR")
-            .replace(/Sarkari/gi, "ONLINEPUR");
-    }
-
-    function renderSarkariResultLayout(rawText) {
-        if (!rawText) return "";
-        let text = cleanBranding(rawText);
-
-        if (/<table/i.test(text)) {
-            return marked.parse(text);
-        }
-
-        let lines = text.split('\n');
-        let datesContent = [];
-        let feeContent = [];
-        let generalContent = [];
-
-        let currentSection = 'general';
-
-        lines.forEach(line => {
-            let trimmed = line.trim();
-            if (!trimmed) return;
-
-            if (/Important Dates/i.test(trimmed)) {
-                currentSection = 'dates';
-                return;
-            } else if (/Application Fee/i.test(trimmed)) {
-                currentSection = 'fee';
-                return;
-            } else if (/Age Limit|Vacancy|Eligibility|How to Apply/i.test(trimmed)) {
-                currentSection = 'general';
-            }
-
-            if (currentSection === 'dates') {
-                datesContent.push(`<span class="sr-item">${trimmed}</span>`);
-            } else if (currentSection === 'fee') {
-                feeContent.push(`<span class="sr-item">${trimmed}</span>`);
-            } else {
-                if (trimmed.includes(':')) {
-                    generalContent.push(`<span class="sr-item">${trimmed}</span>`);
-                } else {
-                    generalContent.push(trimmed);
-                }
-            }
-        });
-
-        let gridHTML = "";
-        
-        if (datesContent.length > 0 || feeContent.length > 0) {
-            gridHTML += `
-            <div class="sr-grid-box">
-                <div class="sr-col">
-                    <div class="sr-col-title">Important Dates</div>
-                    ${datesContent.join('') || '<span class="sr-item">See Notification</span>'}
-                </div>
-                <div class="sr-col">
-                    <div class="sr-col-title">Application Fee</div>
-                    ${feeContent.join('') || '<span class="sr-item">See Notification</span>'}
-                </div>
-            </div>`;
-        }
-
-        let remainingText = generalContent.join('\n\n');
-        return gridHTML + marked.parse(remainingText);
-    }
-
     const urlParams = new URLSearchParams(window.location.search);
     let fileName = urlParams.get('file');
 
     if (!fileName) {
-        document.getElementById('post-title').innerText = "Post File Parameter Missing!";
+        document.getElementById('post-body-content').innerHTML = "<h3>Error: No post file specified.</h3>";
         return;
     }
 
-    if (!fileName.endsWith('.md')) {
-        fileName += '.md';
-    }
+    if (!fileName.endsWith('.md')) fileName += '.md';
 
     try {
         const rawUrl = `https://raw.githubusercontent.com/bkp80025-code/sarkari-result-app/main/posts/${fileName}`;
@@ -314,68 +203,58 @@ document.addEventListener("DOMContentLoaded", async function () {
 
         let text = await res.text();
 
+        // Separate Frontmatter (metadata) & Body
         const parts = text.split(/^---$/m);
         let frontmatterText = parts[1] || "";
-        let bodyText = parts.slice(2).join("---") || "";
+        let bodyText = parts.slice(2).join("---") || text;
 
         function getField(key) {
             const match = frontmatterText.match(new RegExp(`${key}:\\s*["']?(.*?)["']?$`, 'm'));
             return match ? match[1].trim() : "";
         }
 
-        const title = cleanBranding(getField('title')) || fileName.replace('.md', '');
-        const category = getField('category') || "Notification";
-        const startDate = getField('start_date') || "N/A";
-        const lastDate = getField('last_date') || "N/A";
-        const feeInfo = getField('fee_info') || "N/A";
-        const totalPosts = getField('total_posts') || "N/A";
+        const category = getField('category');
+        const startDate = getField('start_date');
+        const lastDate = getField('last_date');
+        const feeInfo = getField('fee_info');
+        const totalPosts = getField('total_posts');
         const applyLink = getField('apply_link');
         const notifLink = getField('notification_link');
 
-        document.getElementById('post-title').innerText = title;
-        document.getElementById('page-title').innerText = title + " - ONLINEPUR";
-        document.getElementById('post-category').innerText = category;
-        document.getElementById('post-start-date').innerText = startDate;
-        document.getElementById('post-last-date').innerText = lastDate;
-        document.getElementById('post-fee').innerText = feeInfo;
-        document.getElementById('post-vacancy').innerText = totalPosts;
+        // Show Top Table only if metadata exists
+        if (category || startDate || applyLink) {
+            document.getElementById('meta-table').style.display = 'table';
+            document.getElementById('post-category').innerText = category || "N/A";
+            document.getElementById('post-start-date').innerText = startDate || "N/A";
+            document.getElementById('post-last-date').innerText = lastDate || "N/A";
+            document.getElementById('post-fee').innerText = feeInfo || "N/A";
+            document.getElementById('post-vacancy').innerText = totalPosts || "N/A";
 
-        if (applyLink) {
-            document.getElementById('post-apply-btn').href = applyLink;
-        } else {
-            document.getElementById('row-apply').style.display = 'none';
+            if (applyLink) document.getElementById('post-apply-btn').href = applyLink;
+            else document.getElementById('post-apply-btn').style.display = 'none';
+
+            if (notifLink) document.getElementById('post-notif-btn').href = notifLink;
+            else document.getElementById('post-notif-btn').style.display = 'none';
         }
 
-        if (notifLink) {
-            document.getElementById('post-notif-btn').href = notifLink;
-        } else {
-            document.getElementById('row-notif').style.display = 'none';
-        }
+        // Automatic Branding Clean-up (Sarkari Result -> ONLINEPUR)
+        bodyText = bodyText
+            .replace(/Sarkari\s*Result/gi, "ONLINEPUR")
+            .replace(/Sarkari\s*Exam/gi, "ONLINEPUR")
+            .replace(/Sarkari/gi, "ONLINEPUR");
 
-        const linksTable = document.getElementById('links-table');
-        const customLinksMatch = frontmatterText.match(/custom_links:([\s\S]*?)(?=\n[a-z_]+:|$)/i);
-        
-        if (customLinksMatch) {
-            const linksBlock = customLinksMatch[1];
-            const linkItems = linksBlock.split('- title:');
-            
-            linkItems.forEach(item => {
-                const tMatch = item.match(/^\s*["']?(.*?)["']?$/m);
-                const uMatch = item.match(/url:\s*["']?(.*?)["']?$/m);
-                
-                if (tMatch && uMatch && tMatch[1].trim() && uMatch[1].trim()) {
-                    const tr = document.createElement('tr');
-                    tr.innerHTML = `<th style="width: 35%;">${tMatch[1].trim()}</th><td><a href="${uMatch[1].trim()}" target="_blank" class="btn-link">Click Here</a></td>`;
-                    linksTable.appendChild(tr);
-                }
-            });
-        }
+        // Render full Markdown content cleanly
+        document.getElementById('post-body-content').innerHTML = marked.parse(bodyText);
 
-        document.getElementById('post-body-content').innerHTML = renderSarkariResultLayout(bodyText);
+        // Update Page Title automatically from H1 in Markdown
+        const h1Match = bodyText.match(/^#\s+(.*)$/m);
+        if (h1Match) {
+            document.title = h1Match[1] + " - ONLINEPUR";
+        }
 
     } catch (err) {
-        console.error("Error loading post:", err);
-        document.getElementById('post-title').innerText = "Post Not Found!";
+        console.error("Error:", err);
+        document.getElementById('post-body-content').innerHTML = "<h3>Post Not Found!</h3>";
     }
 });
 </script>
