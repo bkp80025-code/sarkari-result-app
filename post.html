@@ -4,10 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title id="page-title">Job Details - ONLINEPUR</title>
-    <link rel="stylesheet" href="style.css">
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
     <style>
-        /* Exact Sarkari Result Styling Matching Image */
+        /* Compact Sarkari Result Layout Matching Image Exact Font & Spacing */
         body { 
             background-color: #ffffff; 
             font-family: Georgia, 'Times New Roman', serif; 
@@ -29,7 +28,7 @@
         .post-header { 
             text-align: center; 
             color: #6b0d23; 
-            font-size: 22px; 
+            font-size: 20px; 
             font-weight: bold; 
             margin-bottom: 15px; 
             border-bottom: 2px solid #6b0d23; 
@@ -73,7 +72,7 @@
         }
         .btn-link:hover { background: #1d4ed8; }
 
-        /* Section Maroon Title */
+        /* Section Title */
         .section-title { 
             background: #6b0d23; 
             color: white; 
@@ -85,7 +84,7 @@
             text-align: center; 
         }
 
-        /* Sarkari Result 2-Column Grid Layout (Image Exact Style) */
+        /* Sarkari Result 2-Column Grid Layout */
         .sr-grid-box { 
             display: flex; 
             flex-wrap: wrap; 
@@ -106,10 +105,10 @@
             text-align: center; 
             padding: 6px; 
             margin: -10px -12px 10px -12px; 
-            font-size: 16px; 
+            font-size: 15px; 
         }
 
-        /* Compact Text Line Height Like Image */
+        /* Compact Text Formatting */
         .post-body { 
             line-height: 1.5; 
             font-size: 14px; 
@@ -121,7 +120,7 @@
             color: #ffffff;
             text-align: center;
             padding: 6px;
-            font-size: 16px;
+            font-size: 15px;
             font-weight: bold;
             margin-top: 15px;
             margin-bottom: 10px;
@@ -138,7 +137,7 @@
             font-size: 14px;
         }
 
-        /* Compact Table Inside Body */
+        /* Compact Table Styling */
         .post-body table { 
             width: 100% !important; 
             border-collapse: collapse !important; 
@@ -158,7 +157,6 @@
             font-size: 14px !important;
         }
 
-        /* Bullet Lines Styling */
         .sr-item { 
             display: block; 
             padding: 3px 0; 
@@ -176,7 +174,7 @@
 <body>
 
 <header>
-    <div class="logo" style="color:#6b0d23; font-size: 28px; font-weight: bold; text-align: center; padding: 10px 0;">ONLINEPUR</div>
+    <div class="logo" style="color:#6b0d23; font-size: 26px; font-weight: bold; text-align: center; padding: 10px 0;">ONLINEPUR</div>
 </header>
 
 <div class="post-container">
@@ -298,11 +296,15 @@ document.addEventListener("DOMContentLoaded", async function () {
     }
 
     const urlParams = new URLSearchParams(window.location.search);
-    const fileName = urlParams.get('file');
+    let fileName = urlParams.get('file');
 
     if (!fileName) {
-        document.getElementById('post-title').innerText = "Post Not Found!";
+        document.getElementById('post-title').innerText = "Post File Parameter Missing!";
         return;
+    }
+
+    if (!fileName.endsWith('.md')) {
+        fileName += '.md';
     }
 
     try {
@@ -373,7 +375,7 @@ document.addEventListener("DOMContentLoaded", async function () {
 
     } catch (err) {
         console.error("Error loading post:", err);
-        document.getElementById('post-title').innerText = "Error Loading Details!";
+        document.getElementById('post-title').innerText = "Post Not Found!";
     }
 });
 </script>
