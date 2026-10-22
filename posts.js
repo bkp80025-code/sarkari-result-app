@@ -1,9 +1,20 @@
 document.addEventListener("DOMContentLoaded", async function () {
+  "use strict";
 
-  // Auto Clean / Branding Replacement Function
-  function cleanBranding(text) {
-    if (!text) return "";
-    return text
+  const API_URL = "https://api.github.com/repos/bkp80025-code/sarkari-result-app/contents/posts";
+  const RAW_BASE = "https://raw.githubusercontent.com/bkp80025-code/sarkari-result-app/main/posts/";
+
+  const containers = [
+    "job-list-container",
+    "admit-list-container",
+    "result-list-container",
+    "answer-list-container",
+    "doc-list-container",
+    "yojana-list-container"
+  ];
+
+  function cleanBranding(value = "") {
+    return String(value)
       .replace(/Sarkari\s*Result/gi, "ONLINEPUR")
       .replace(/Sarkari\s*Exam/gi, "ONLINEPUR")
       .replace(/Sarkari\s*Naukri/gi, "ONLINEPUR")
@@ -11,73 +22,176 @@ document.addEventListener("DOMContentLoaded", async function () {
       .replace(/SarkariExam/gi, "ONLINEPUR");
   }
 
-  // Fetch Admin Posts from GitHub
-  try {
-    const repoUrl = "https://api.github.com/repos/bkp80025-code/sarkari-result-app/contents/posts";
-    const response = await fetch(repoUrl);
+  function field(text, key) {
+    const match = text.match(
+      new RegExp("^" + key + ":\\s*(.*?)\\s*$", "m")
+    );
 
-    if (response.ok) {
-      const files = await response.json();
+    if (!match) return "";
 
-      for (const file of files) {
-        if (file.name.endsWith('.md')) {
-          try {
-            const rawRes = await fetch(file.download_url);
-            let text = await rawRes.text();
-
-            // Auto-Replace Branding
-            text = cleanBranding(text);
-
-            const titleMatch = text.match(/title:\s*["']?(.*?)["']?$/m);
-            const categoryMatch = text.match(/category:\s*["']?(.*?)["']?$/m);
-
-            let title = titleMatch ? titleMatch[1].trim() : file.name.replace('.md', '');
-            title = cleanBranding(title);
-
-            const categoryName = categoryMatch ? categoryMatch[1].trim() : "";
-
-            const postUrl = `post.html?file=${file.name}`;
-
-            // Routing to exact container(s)
-            const catLower = categoryName.toLowerCase();
-
-            if (catLower.includes("common")) {
-              // Post to ALL 6 Boxes
-              addPostToDOM("job-list-container", title, postUrl);
-              addPostToDOM("admit-list-container", title, postUrl);
-              addPostToDOM("result-list-container", title, postUrl);
-              addPostToDOM("answer-list-container", title, postUrl);
-              addPostToDOM("doc-list-container", title, postUrl);
-              addPostToDOM("yojana-list-container", title, postUrl);
-            } else if (catLower.includes("job")) {
-              addPostToDOM("job-list-container", title, postUrl);
-            } else if (catLower.includes("admit")) {
-              addPostToDOM("admit-list-container", title, postUrl);
-            } else if (catLower.includes("result")) {
-              addPostToDOM("result-list-container", title, postUrl);
-            } else if (catLower.includes("answer")) {
-              addPostToDOM("answer-list-container", title, postUrl);
-            } else if (catLower.includes("document")) {
-              addPostToDOM("doc-list-container", title, postUrl);
-            } else if (catLower.includes("yojana")) {
-              addPostToDOM("yojana-list-container", title, postUrl);
-            }
-          } catch (e) {
-            console.error("Error reading file:", e);
-          }
-        }
-      }
-    }
-  } catch (err) {
-    console.error("Error fetching posts:", err);
+    return match[1].trim().replace(/^(['"])(.*)\1$/, "$2");
   }
 
-  function addPostToDOM(containerId, title, link) {
-    const container = document.getElementById(containerId);
-    if (container) {
-      const li = document.createElement("li");
-      li.innerHTML = `<a href="${link}">👉 ${title}</a>`;
-      container.appendChild(li);
+  function parseFrontmatter(text) {
+    const match = text.match(/^---\s*\r?\n([\s\S]*?)\r?\n---\s*(?:\r?\n|$)/);
+    return match ? match[1] : "";
+  }
+
+  function dateValue(frontmatter, fallback) {
+    const value =
+      field(frontmatter, "date") ||
+      field(frontmatter, "publish_date") ||
+      field(frontmatter, "start_date");
+
+    const parsed = Date.parse(value);
+
+    return Number.isNaN(parsed) ? (fallback || 0) : parsed;
+  }
+
+  function categoryContainers(category) {
+    const c = category.toLowerCase();
+
+    if (/common|all|सभी/.test(c)) {
+      return containers.slice();
     }
+
+    const ids = [];
+
+    if (/job|recruitment|vacancy|bharti|भर्ती|नौकरी/.test(c)) {
+      ids.push("job-list-container");
+    }
+
+    if (/admit|hall.?ticket|exam.?city|call.?letter|प्रवेश.?पत्र/.test(c)) {
+      ids.push("admit-list-container");
+    }
+
+    if (/result|score.?card|merit.?list|रिजल्ट|परिणाम/.test(c)) {
+      ids.push("result-list-container");
+    }
+
+    if (/answer.?key|उत्तर.?कुंजी/.test(c)) {
+      ids.push("answer-list-container");
+    }
+
+    if (/document|certificate|दस्तावेज|प्रमाण.?पत्र/.test(c)) {
+      ids.push("doc-list-container");
+    }
+
+    if (/yojana|scheme|योजना/.test(c)) {
+      ids.push("yojana-list-container");
+    }
+
+    return ids;
+  }
+
+  function addPost(containerId, title, fileName) {
+    const container = document.getElementById(containerId);
+
+    if (!container) return;
+
+    const li = document.createElement("li");
+    const a = document.createElement("a");
+
+    a.href = "post.html?file=" + encodeURIComponent(fileName);
+    a.textContent = "👉 " + cleanBranding(title);
+    a.title = cleanBranding(title);
+
+    li.appendChild(a);
+    container.appendChild(li);
+  }
+
+  try {
+    containers.forEach(id => {
+      const el = document.getElementById(id);
+      if (el) el.replaceChildren();
+    });
+
+    const response = await fetch(API_URL);
+
+    if (!response.ok) {
+      throw new Error("GitHub API error: " + response.status);
+    }
+
+    const files = await response.json();
+
+    const markdownFiles = files.filter(file =>
+      file.type === "file" && /\.md$/i.test(file.name)
+    );
+
+    const results = await Promise.all(
+      markdownFiles.map(async file => {
+        try {
+          const res = await fetch(RAW_BASE + encodeURIComponent(file.name));
+
+          if (!res.ok) return null;
+
+          const text = await res.text();
+          const frontmatter = parseFrontmatter(text);
+
+          const title = cleanBranding(
+            field(frontmatter, "title") ||
+            file.name.replace(/\.md$/i, "").replace(/[-_]/g, " ")
+          );
+
+          const category = field(frontmatter, "category");
+
+          const yearMatch = file.name.match(/20\d{2}/);
+
+          const fallbackDate = yearMatch
+            ? Date.parse(yearMatch[0] + "-01-01")
+            : 0;
+
+          return {
+            fileName: file.name,
+            title,
+            category,
+            date: dateValue(frontmatter, fallbackDate)
+          };
+        } catch (error) {
+          console.error("Post read error:", file.name, error);
+          return null;
+        }
+      })
+    );
+
+    results
+      .filter(Boolean)
+      .sort((a, b) =>
+        b.date - a.date ||
+        b.fileName.localeCompare(a.fileName)
+      )
+      .forEach(post => {
+        categoryContainers(post.category).forEach(id => {
+          addPost(id, post.title, post.fileName);
+        });
+      });
+
+    containers.forEach(id => {
+      const el = document.getElementById(id);
+
+      if (el && !el.children.length) {
+        const li = document.createElement("li");
+        li.className = "empty-post-message";
+        li.textContent = "अभी कोई पोस्ट उपलब्ध नहीं है।";
+        el.appendChild(li);
+      }
+    });
+
+  } catch (error) {
+    console.error("ONLINEPUR posts loading error:", error);
+
+    containers.forEach(id => {
+      const el = document.getElementById(id);
+
+      if (el) {
+        el.replaceChildren();
+
+        const li = document.createElement("li");
+        li.textContent =
+          "पोस्ट लोड नहीं हो सकी। कृपया थोड़ी देर बाद रिफ्रेश करें।";
+
+        el.appendChild(li);
+      }
+    });
   }
 });
