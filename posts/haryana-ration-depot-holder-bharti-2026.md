@@ -156,7 +156,7 @@ notification_link: https://saralharyana.gov.in/
 | ऑनलाइन आवेदन पोर्टल | [Apply Online](https://saralharyana.gov.in/) |
 | खाद्य एवं आपूर्ति विभाग | [Official Website](https://haryanafood.gov.in/) |
 | विभागीय विज्ञापन | [Advertisements / Recruitment](https://haryanafood.gov.in/advertisements-recruitment/) |
-| भर्ती से संबंधित अतिरिक्त जानकारी | [Read More](https://dshelpingforever.co.in/haryana-ration-depot-holder-bharti.html) |
+| भर्ती से संबंधित अतिरिक्त जानकारी | [Read More](https://dshelpingforever.co.in/haryana-ration-depot-holder-bharti.htmhttps://bkp80025-code.github.io/sarkari-result-app/) |
 
 ## Frequently Asked Questions (FAQs)
 
